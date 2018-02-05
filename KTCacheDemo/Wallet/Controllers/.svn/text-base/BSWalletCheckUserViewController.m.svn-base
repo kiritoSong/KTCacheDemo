@@ -1,0 +1,236 @@
+//
+//  BSWalletCheckUserViewController.m
+//  BaiSongInternational
+//
+//  Created by 刘嵩野 on 2018/2/2.
+//  Copyright © 2018年 maqihan. All rights reserved.
+//
+
+#import "BSWalletCheckUserViewController.h"
+
+#import "BSUnderlineTextField.h"
+
+#import "UIViewController+KeyboardCorver.h"
+#import "UIViewController+DismissKeyboard.h"
+#import "BSLoginManager.h"
+#import "BSTradeBlockKeyBackUpViewController.h"
+#import "BSEncryptDecodeManager.h"
+
+#define TextFieldHeight 50.0f
+#define TextFieldWidth 220.0f
+
+static NSString * checkGoogleCode = @"Android/Wallet/checkPassword";
+
+@interface BSWalletCheckUserViewController ()<BSUnderlineTextFieldDelegate>
+@property (nonatomic) UILabel * titleLab;
+@property (nonatomic) BSUnderlineTextField * textField;
+@property (nonatomic) UIButton * submitBtn;
+@property (nonatomic) BOOL  submitBtnActive;
+@property (nonatomic) BSWalletData * walletData;
+//替换左返回键
+@property (nonatomic) UIBarButtonItem      * backBtnItem;
+@end
+
+@implementation BSWalletCheckUserViewController
+
+- (instancetype)initWithWalletData:(BSWalletData *)walletData
+{
+    self = [super init];
+    if (self) {
+        self.walletData = walletData;
+    }
+    return self;
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self commonInit];
+    [self addNotification];
+    [self setupForDismissKeyboard];
+}
+
+
+- (void)dealloc {
+    [self clearKeyboardNotificationAndGesture];
+    //清除键盘通知
+    [self clearNotificationAndGesture];
+}
+
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationItem.leftBarButtonItem = self.backBtnItem;
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - touch event
+- (void)leftItemClick {
+    [self.view endEditing:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+#pragma mark - delegate
+#pragma mark  BSUnderlineTextFieldDelegate
+
+- (void)UnderlineTextFieldEditChanged:(BSUnderlineTextField *)textField {
+    self.submitBtnActive = self.textField.text.length;
+}
+
+
+
+
+#pragma mark - touch event
+//登录
+- (void)submitBtnClick {
+    [self.view endEditing:YES];
+    
+    [self showHUDInView:self.view];
+    NSString *encryptPsw = [BSEncryptDecodeManager encrypt_MD5:self.textField.text];
+    
+    NSString * url = [NSString stringWithFormat:checkGoogleCode,encryptPsw];
+    
+    NSDictionary * parameters = @{@"pwd":encryptPsw};
+    
+    [[BSNetWorking shareInstance]POST:url refresh:YES parameters:parameters success:^(id json) {
+        [self hideHUD];
+        if ([json[@"status"] integerValue] == 1) {
+            //验证成功
+            BSTradeBlockKeyBackUpViewController * vc = [[BSTradeBlockKeyBackUpViewController alloc]initWithWalletData:self.walletData];
+            vc.cantGoBack = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else {
+            [self showHint:json[@"msg"]];
+        }
+    } failure:^(NSError *error) {
+        [self hideHUD];
+    }];
+    
+
+}
+
+
+#pragma mark - private method
+- (void)commonInit {
+    
+    self.title = @"";
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.titleLab];
+    
+    [self.view addSubview:self.textField];
+    
+    [self.view addSubview:self.submitBtn];
+    
+    
+    [self layoutCustomViews];
+}
+
+- (void)layoutCustomViews {
+    [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view).offset(90.0f);
+        make.width.equalTo(self.view).offset(-40.0f);
+    }];
+    
+    
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_centerY);
+        make.centerX.equalTo(self.view);
+        make.height.mas_equalTo(TextFieldHeight);
+        make.width.mas_equalTo(TextFieldWidth);
+    }];
+    
+    
+    [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.textField.mas_bottom).offset(30.0f);
+        make.centerX.width.equalTo(self.textField);
+        make.height.mas_equalTo(TextFieldHeight);
+    }];
+    
+    
+}
+
+
+
+
+#pragma mark - setter && getter
+
+- (UILabel *)titleLab {
+    if (!_titleLab) {
+        _titleLab = [UILabel new];
+        _titleLab.textColor = BSCOLOR_000;
+        _titleLab.font = [UIFont systemFontOfSize:40.0f];
+        _titleLab.text = BSLocalizedString(@"wallet.identity.authentication");
+        _titleLab.numberOfLines = 0;
+        _titleLab.textAlignment = NSTextAlignmentCenter;
+    }
+    return _titleLab;
+}
+
+
+- (BSUnderlineTextField *)textField {
+    if (!_textField) {
+        _textField = [[BSUnderlineTextField alloc]initWithStyle:BSUnderlineTextFieldStyle_PassWord];
+        _textField.placeholder = BSLocalizedString(@"wallet.enter.password");
+        _textField.textMaxCount = 40;
+        _textField.delegate = self;
+        
+    }
+    return _textField;
+}
+
+- (UIButton *)submitBtn {
+    if (!_submitBtn) {
+        _submitBtn = [UIButton new];
+        [_submitBtn addTarget:self action:@selector(submitBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _submitBtn.backgroundColor = BSCOLOR_337FDD;
+        _submitBtn.layer.cornerRadius  = TextFieldHeight/2;
+        _submitBtn.layer.masksToBounds = YES;
+        [_submitBtn setTitle:BSLocalizedString(@"verification") forState:UIControlStateNormal];
+        _submitBtn.alpha = 0.5;
+        _submitBtn.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+        _submitBtn.alpha = 0.5;
+        _submitBtn.userInteractionEnabled = NO;
+        
+    }
+    return _submitBtn;
+}
+
+- (void)setSubmitBtnActive:(BOOL)submitBtnActive {
+    _submitBtnActive = submitBtnActive;
+    if (submitBtnActive) {
+        self.submitBtn.alpha = 1;
+        self.submitBtn.userInteractionEnabled = YES;
+    }else {
+        self.submitBtn.alpha = 0.5;
+        self.submitBtn.userInteractionEnabled = NO;
+    }
+}
+
+-(UIBarButtonItem *)backBtnItem {
+    if (!_backBtnItem) {
+        UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        leftBtn.frame = CGRectMake(0, 0, 60, 40);
+        [leftBtn addTarget:self action:@selector(leftItemClick) forControlEvents:UIControlEventTouchUpInside];
+        [leftBtn setTitle:BSLocalizedString(@"cancel") forState:UIControlStateNormal];
+        [leftBtn setTitleColor:BSCOLOR_000 forState:UIControlStateNormal];
+        leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+        leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        _backBtnItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    }
+    return _backBtnItem;
+}
+@end
