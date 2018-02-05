@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56105C310C3BA8D203E59F0B /* libPods-KTCacheDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5233A51A6E85B361FB83FB37 /* libPods-KTCacheDemo.a */; };
+		5F00F98320283B7200BC50AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F98220283B7200BC50AA /* AppDelegate.m */; };
+		5F00F98620283B7200BC50AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F98520283B7200BC50AA /* ViewController.m */; };
+		5F00F98920283B7200BC50AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F00F98720283B7200BC50AA /* Main.storyboard */; };
+		5F00F98B20283B7200BC50AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F00F98A20283B7200BC50AA /* Assets.xcassets */; };
+		5F00F98E20283B7200BC50AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F00F98C20283B7200BC50AA /* LaunchScreen.storyboard */; };
+		5F00F99120283B7200BC50AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F99020283B7200BC50AA /* main.m */; };
+		5F00F99B20283B7200BC50AA /* KTCacheDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F99A20283B7200BC50AA /* KTCacheDemoTests.m */; };
+		5F00F9A620283B7200BC50AA /* KTCacheDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F9A520283B7200BC50AA /* KTCacheDemoUITests.m */; };
+		5F00F9B520283EC700BC50AA /* BSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F9B320283EC600BC50AA /* BSKeychain.m */; };
+		5F00F9D020283EE400BC50AA /* BSWalletCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F9B820283EE400BC50AA /* BSWalletCache.m */; };
+		5F00F9D120283EE400BC50AA /* BSWalletCacheMediater.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F00F9BB20283EE400BC50AA /* BSWalletCacheMediater.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F00F99720283B7200BC50AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F00F97620283B7200BC50AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F00F97D20283B7200BC50AA;
+			remoteInfo = KTCacheDemo;
+		};
+		5F00F9A220283B7200BC50AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F00F97620283B7200BC50AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F00F97D20283B7200BC50AA;
+			remoteInfo = KTCacheDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		425DF2F040F62FAC328F9B87 /* Pods-KTCacheDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTCacheDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTCacheDemo/Pods-KTCacheDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5233A51A6E85B361FB83FB37 /* libPods-KTCacheDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KTCacheDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F00F97E20283B7200BC50AA /* KTCacheDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTCacheDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F00F98120283B7200BC50AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F00F98220283B7200BC50AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F00F98420283B7200BC50AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5F00F98520283B7200BC50AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5F00F98820283B7200BC50AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F00F98A20283B7200BC50AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F00F98D20283B7200BC50AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F00F98F20283B7200BC50AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F00F99020283B7200BC50AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F00F99620283B7200BC50AA /* KTCacheDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KTCacheDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F00F99A20283B7200BC50AA /* KTCacheDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTCacheDemoTests.m; sourceTree = "<group>"; };
+		5F00F99C20283B7200BC50AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F00F9A120283B7200BC50AA /* KTCacheDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KTCacheDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F00F9A520283B7200BC50AA /* KTCacheDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTCacheDemoUITests.m; sourceTree = "<group>"; };
+		5F00F9A720283B7200BC50AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F00F9B320283EC600BC50AA /* BSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeychain.m; sourceTree = "<group>"; };
+		5F00F9B420283EC600BC50AA /* BSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKeychain.h; sourceTree = "<group>"; };
+		5F00F9B820283EE400BC50AA /* BSWalletCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWalletCache.m; sourceTree = "<group>"; };
+		5F00F9B920283EE400BC50AA /* BSWalletCacheMediater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWalletCacheMediater.h; sourceTree = "<group>"; };
+		5F00F9BA20283EE400BC50AA /* BSWalletCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWalletCache.h; sourceTree = "<group>"; };
+		5F00F9BB20283EE400BC50AA /* BSWalletCacheMediater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWalletCacheMediater.m; sourceTree = "<group>"; };
+		EC76E2C351B855E08EE4252C /* Pods-KTCacheDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTCacheDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KTCacheDemo/Pods-KTCacheDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F00F97B20283B7200BC50AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56105C310C3BA8D203E59F0B /* libPods-KTCacheDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F00F99320283B7200BC50AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F00F99E20283B7200BC50AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D12A618205542D02332A342 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				425DF2F040F62FAC328F9B87 /* Pods-KTCacheDemo.debug.xcconfig */,
+				EC76E2C351B855E08EE4252C /* Pods-KTCacheDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5F00F97520283B7200BC50AA = {
+			isa = PBXGroup;
+			children = (
+				5F00F98020283B7200BC50AA /* KTCacheDemo */,
+				5F00F99920283B7200BC50AA /* KTCacheDemoTests */,
+				5F00F9A420283B7200BC50AA /* KTCacheDemoUITests */,
+				5F00F97F20283B7200BC50AA /* Products */,
+				2D12A618205542D02332A342 /* Pods */,
+				62C1EC08C0299E1FAE814199 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5F00F97F20283B7200BC50AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F00F97E20283B7200BC50AA /* KTCacheDemo.app */,
+				5F00F99620283B7200BC50AA /* KTCacheDemoTests.xctest */,
+				5F00F9A120283B7200BC50AA /* KTCacheDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F00F98020283B7200BC50AA /* KTCacheDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5F00F9B620283EE400BC50AA /* Wallet */,
+				5F00F9B420283EC600BC50AA /* BSKeychain.h */,
+				5F00F9B320283EC600BC50AA /* BSKeychain.m */,
+				5F00F98120283B7200BC50AA /* AppDelegate.h */,
+				5F00F98220283B7200BC50AA /* AppDelegate.m */,
+				5F00F98420283B7200BC50AA /* ViewController.h */,
+				5F00F98520283B7200BC50AA /* ViewController.m */,
+				5F00F98720283B7200BC50AA /* Main.storyboard */,
+				5F00F98A20283B7200BC50AA /* Assets.xcassets */,
+				5F00F98C20283B7200BC50AA /* LaunchScreen.storyboard */,
+				5F00F98F20283B7200BC50AA /* Info.plist */,
+				5F00F99020283B7200BC50AA /* main.m */,
+			);
+			path = KTCacheDemo;
+			sourceTree = "<group>";
+		};
+		5F00F99920283B7200BC50AA /* KTCacheDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F00F99A20283B7200BC50AA /* KTCacheDemoTests.m */,
+				5F00F99C20283B7200BC50AA /* Info.plist */,
+			);
+			path = KTCacheDemoTests;
+			sourceTree = "<group>";
+		};
+		5F00F9A420283B7200BC50AA /* KTCacheDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5F00F9A520283B7200BC50AA /* KTCacheDemoUITests.m */,
+				5F00F9A720283B7200BC50AA /* Info.plist */,
+			);
+			path = KTCacheDemoUITests;
+			sourceTree = "<group>";
+		};
+		5F00F9B620283EE400BC50AA /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				5F00F9B720283EE400BC50AA /* Models */,
+				5F00F9BC20283EE400BC50AA /* Controllers */,
+				5F00F9C520283EE400BC50AA /* Views */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		5F00F9B720283EE400BC50AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F00F9BA20283EE400BC50AA /* BSWalletCache.h */,
+				5F00F9B820283EE400BC50AA /* BSWalletCache.m */,
+				5F00F9B920283EE400BC50AA /* BSWalletCacheMediater.h */,
+				5F00F9BB20283EE400BC50AA /* BSWalletCacheMediater.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F00F9BC20283EE400BC50AA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F00F9C520283EE400BC50AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		62C1EC08C0299E1FAE814199 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5233A51A6E85B361FB83FB37 /* libPods-KTCacheDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F00F97D20283B7200BC50AA /* KTCacheDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F00F9AA20283B7200BC50AA /* Build configuration list for PBXNativeTarget "KTCacheDemo" */;
+			buildPhases = (
+				143DFB88FA1B9420434FE323 /* [CP] Check Pods Manifest.lock */,
+				5F00F97A20283B7200BC50AA /* Sources */,
+				5F00F97B20283B7200BC50AA /* Frameworks */,
+				5F00F97C20283B7200BC50AA /* Resources */,
+				508548D47241E27F32A2F3F1 /* [CP] Embed Pods Frameworks */,
+				1781A44FA3755D4B4C455F9E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KTCacheDemo;
+			productName = KTCacheDemo;
+			productReference = 5F00F97E20283B7200BC50AA /* KTCacheDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F00F99520283B7200BC50AA /* KTCacheDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F00F9AD20283B7200BC50AA /* Build configuration list for PBXNativeTarget "KTCacheDemoTests" */;
+			buildPhases = (
+				5F00F99220283B7200BC50AA /* Sources */,
+				5F00F99320283B7200BC50AA /* Frameworks */,
+				5F00F99420283B7200BC50AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F00F99820283B7200BC50AA /* PBXTargetDependency */,
+			);
+			name = KTCacheDemoTests;
+			productName = KTCacheDemoTests;
+			productReference = 5F00F99620283B7200BC50AA /* KTCacheDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5F00F9A020283B7200BC50AA /* KTCacheDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F00F9B020283B7200BC50AA /* Build configuration list for PBXNativeTarget "KTCacheDemoUITests" */;
+			buildPhases = (
+				5F00F99D20283B7200BC50AA /* Sources */,
+				5F00F99E20283B7200BC50AA /* Frameworks */,
+				5F00F99F20283B7200BC50AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F00F9A320283B7200BC50AA /* PBXTargetDependency */,
+			);
+			name = KTCacheDemoUITests;
+			productName = KTCacheDemoUITests;
+			productReference = 5F00F9A120283B7200BC50AA /* KTCacheDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F00F97620283B7200BC50AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "刘嵩野";
+				TargetAttributes = {
+					5F00F97D20283B7200BC50AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					5F00F99520283B7200BC50AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5F00F97D20283B7200BC50AA;
+					};
+					5F00F9A020283B7200BC50AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5F00F97D20283B7200BC50AA;
+					};
+				};
+			};
+			buildConfigurationList = 5F00F97920283B7200BC50AA /* Build configuration list for PBXProject "KTCacheDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F00F97520283B7200BC50AA;
+			productRefGroup = 5F00F97F20283B7200BC50AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F00F97D20283B7200BC50AA /* KTCacheDemo */,
+				5F00F99520283B7200BC50AA /* KTCacheDemoTests */,
+				5F00F9A020283B7200BC50AA /* KTCacheDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F00F97C20283B7200BC50AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F00F98E20283B7200BC50AA /* LaunchScreen.storyboard in Resources */,
+				5F00F98B20283B7200BC50AA /* Assets.xcassets in Resources */,
+				5F00F98920283B7200BC50AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F00F99420283B7200BC50AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F00F99F20283B7200BC50AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		143DFB88FA1B9420434FE323 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KTCacheDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1781A44FA3755D4B4C455F9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KTCacheDemo/Pods-KTCacheDemo-resources.sh",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KTCacheDemo/Pods-KTCacheDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		508548D47241E27F32A2F3F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KTCacheDemo/Pods-KTCacheDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F00F97A20283B7200BC50AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F00F9B520283EC700BC50AA /* BSKeychain.m in Sources */,
+				5F00F98620283B7200BC50AA /* ViewController.m in Sources */,
+				5F00F9D020283EE400BC50AA /* BSWalletCache.m in Sources */,
+				5F00F9D120283EE400BC50AA /* BSWalletCacheMediater.m in Sources */,
+				5F00F99120283B7200BC50AA /* main.m in Sources */,
+				5F00F98320283B7200BC50AA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F00F99220283B7200BC50AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F00F99B20283B7200BC50AA /* KTCacheDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F00F99D20283B7200BC50AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F00F9A620283B7200BC50AA /* KTCacheDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F00F99820283B7200BC50AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F00F97D20283B7200BC50AA /* KTCacheDemo */;
+			targetProxy = 5F00F99720283B7200BC50AA /* PBXContainerItemProxy */;
+		};
+		5F00F9A320283B7200BC50AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F00F97D20283B7200BC50AA /* KTCacheDemo */;
+			targetProxy = 5F00F9A220283B7200BC50AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F00F98720283B7200BC50AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F00F98820283B7200BC50AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F00F98C20283B7200BC50AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F00F98D20283B7200BC50AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F00F9A820283B7200BC50AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5F00F9A920283B7200BC50AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F00F9AB20283B7200BC50AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 425DF2F040F62FAC328F9B87 /* Pods-KTCacheDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QWDT94UJRT;
+				INFOPLIST_FILE = KTCacheDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirito-song.KTCacheDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F00F9AC20283B7200BC50AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC76E2C351B855E08EE4252C /* Pods-KTCacheDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QWDT94UJRT;
+				INFOPLIST_FILE = KTCacheDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirito-song.KTCacheDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5F00F9AE20283B7200BC50AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QWDT94UJRT;
+				INFOPLIST_FILE = KTCacheDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirito-song.KTCacheDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KTCacheDemo.app/KTCacheDemo";
+			};
+			name = Debug;
+		};
+		5F00F9AF20283B7200BC50AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QWDT94UJRT;
+				INFOPLIST_FILE = KTCacheDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirito-song.KTCacheDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KTCacheDemo.app/KTCacheDemo";
+			};
+			name = Release;
+		};
+		5F00F9B120283B7200BC50AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QWDT94UJRT;
+				INFOPLIST_FILE = KTCacheDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirito-song.KTCacheDemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KTCacheDemo;
+			};
+			name = Debug;
+		};
+		5F00F9B220283B7200BC50AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QWDT94UJRT;
+				INFOPLIST_FILE = KTCacheDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirito-song.KTCacheDemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KTCacheDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F00F97920283B7200BC50AA /* Build configuration list for PBXProject "KTCacheDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F00F9A820283B7200BC50AA /* Debug */,
+				5F00F9A920283B7200BC50AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F00F9AA20283B7200BC50AA /* Build configuration list for PBXNativeTarget "KTCacheDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F00F9AB20283B7200BC50AA /* Debug */,
+				5F00F9AC20283B7200BC50AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F00F9AD20283B7200BC50AA /* Build configuration list for PBXNativeTarget "KTCacheDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F00F9AE20283B7200BC50AA /* Debug */,
+				5F00F9AF20283B7200BC50AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F00F9B020283B7200BC50AA /* Build configuration list for PBXNativeTarget "KTCacheDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F00F9B120283B7200BC50AA /* Debug */,
+				5F00F9B220283B7200BC50AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F00F97620283B7200BC50AA /* Project object */;
+}
